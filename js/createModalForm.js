@@ -1,5 +1,5 @@
 import {createFormContactItem} from './createFormContactItem.js';
-import {addBtnSvg, plusDefault, plusHover} from './svgImg.js';
+import {plusDefault, plusHover} from './svgImg.js';
 
 export const createModalForm = (title) => {
   const form = document.createElement('form');
@@ -69,8 +69,6 @@ export const createModalForm = (title) => {
       inputWrapperLastName,
       contactBlock,
       saveBtn,
-
-
   );
 
   addContactBtn.addEventListener('mouseover', (e) => {
