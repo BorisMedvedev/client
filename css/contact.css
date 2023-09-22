@@ -12,7 +12,6 @@
 }
 
 .contact__list {
-  padding: 10px 12px;
   width: 123px;
   position: absolute;
   background: #F4F3F6; 
@@ -48,8 +47,48 @@
 }
 
 .contact__btn-del {
+  position: relative;
   border: 1px #C8C5D1 solid;
   width: 40px;
   height: 37px;
   border-left: none;
+}
+
+.site-tooltip {
+  padding: 7px 15px;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  width: 170px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.site-tooltip::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(100% 0, 0 0, 51% 100%);
+  background-color: #333;
+} 
+
+.contact__btn-del:hover .site-tooltip{
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact__list li {
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+.contact__list li:hover {
+  background-color:#E7E5EB;
 }

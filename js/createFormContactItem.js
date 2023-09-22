@@ -1,4 +1,3 @@
-import {createModalForm} from './createModalForm.js';
 import {svgDel} from './svgImg.js';
 
 export const createFormContactItem = () => {
@@ -20,8 +19,9 @@ export const createFormContactItem = () => {
   contactName.classList.add('contact__name');
   contactBtnDel.classList.add('contact__btn-del', 'btn-reset');
   contactInput.classList.add('contact__input');
+  contactBtnDelTooltip.classList.add('site-tooltip');
 
-  // contactBtnDelTooltip.textContent = 'Удалить контакт';
+  contactBtnDelTooltip.textContent = 'Удалить контакт';
   contactName.textContent = 'Телефон';
   contactPhone.textContent = 'Телефон';
   contactVk.textContent = 'ВК';
@@ -39,7 +39,6 @@ export const createFormContactItem = () => {
   contactBtnDel.addEventListener('click', (e) => {
     e.preventDefault();
     contact.remove();
-    
   });
 
   contactName.addEventListener('click', (e) => {

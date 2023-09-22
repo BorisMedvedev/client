@@ -74,6 +74,7 @@
 }
 
 .save-btn {
+  position: relative;
   margin: 0 auto;
   margin-bottom: 15px;
   padding: 14px 50px;
@@ -91,3 +92,14 @@
   background-color: transparent;
 }
 
+.plus-span {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  left: 156px;
+  transition:opacity 0.3s, visibility 0.3s;
+}
+.plus-span.plus-span--active {
+  opacity: 1;
+  visibility: visible;
+}

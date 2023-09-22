@@ -1,5 +1,5 @@
 import {createFormContactItem} from './createFormContactItem.js';
-import {addBtnSvg} from './svgImg.js';
+import {addBtnSvg, plusDefault, plusHover} from './svgImg.js';
 
 export const createModalForm = (title) => {
   const form = document.createElement('form');
@@ -18,6 +18,8 @@ export const createModalForm = (title) => {
   const cancelBtn = document.createElement('button');
   const closeBtn = document.createElement('button');
   const modalTitle = document.createElement('h2');
+  const plusDef = document.createElement('span');
+  const plusHov = document.createElement('span');
 
 
   form.classList.add('form-client');
@@ -36,12 +38,16 @@ export const createModalForm = (title) => {
   cancelBtn.classList.add('btn-reset', 'add-contact');
   closeBtn.classList.add('btn-reset', 'close-btn');
   modalTitle.classList.add('modal-title');
+  plusDef.classList.add('plus-span', 'plus-span--active');
+  plusHov.classList.add('plus-span');
 
 
   inputName.type = 'text';
   inputSurname.type = 'text';
   inputLastName.type = 'text';
 
+  plusDef.innerHTML = plusDefault;
+  plusHov.innerHTML = plusHover;
   labelName.textContent = 'Имя';
   labelSurName.textContent = 'Фамилия';
   labelLastName.textContent = 'Отчество';
@@ -51,6 +57,7 @@ export const createModalForm = (title) => {
   modalTitle.textContent = title;
 
 
+  addContactBtn.prepend(plusDef, plusHov);
   contactBlock.append(addContactBtn);
   inputWrapperName.append(inputName, labelName);
   inputWrapperSurName.append(inputSurname, labelSurName);
@@ -65,6 +72,17 @@ export const createModalForm = (title) => {
 
 
   );
+
+  addContactBtn.addEventListener('mouseover', (e) => {
+    e.preventDefault();
+    plusDef.classList.remove('plus-span--active');
+    plusHov.classList.add('plus-span--active');
+  });
+  addContactBtn.addEventListener('mouseout', (e) => {
+    e.preventDefault();
+    plusDef.classList.add('plus-span--active');
+    plusHov.classList.remove('plus-span--active');
+  });
 
   addContactBtn.addEventListener('click', (e) => {
     e.preventDefault();
