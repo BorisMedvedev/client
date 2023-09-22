@@ -33,8 +33,8 @@
   display: block;
   position: absolute;
   left: 0;
-  top: -24px;
-  transform: scale(.80);
+  top: -18px;
+  transform: scale(.9);
   color: #34C759;
   font-size: 18px;
   pointer-events: none;

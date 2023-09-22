@@ -43,9 +43,9 @@ export const createFormContactItem = () => {
 
   contactName.addEventListener('click', (e) => {
     e.preventDefault();
-    contactList.classList.add('active');
+    contactList.classList.toggle('active');
   });
-  contactList.addEventListener('mouseleave', () => {
+  contactType.addEventListener('mouseleave', () => {
     contactList.classList.remove('active');
   });
 

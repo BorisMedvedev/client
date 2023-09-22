@@ -35,7 +35,7 @@ export const createModalForm = (title) => {
   addContactBtn.classList.add('btn-reset', 'add-contact', 'active');
   contactBlock.classList.add('contact-block');
   saveBtn.classList.add('btn-reset', 'site-btn', 'save-btn');
-  cancelBtn.classList.add('btn-reset', 'add-contact');
+  cancelBtn.classList.add('btn-reset', 'close-contact');
   closeBtn.classList.add('btn-reset', 'close-btn');
   modalTitle.classList.add('modal-title');
   plusDef.classList.add('plus-span', 'plus-span--active');
