@@ -26,8 +26,19 @@ export const createModalWindow = () => {
 
   modalForm.form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const contactsType = document.querySelectorAll('.contact__name');
+    const contactsValueInput = document.querySelectorAll('.contact__input');
+
     const contacts = [];
     const clientObj = {};
+
+    for (let i = 0; i < contactsType.length; i++) {
+      contacts.push({
+        type: contactsType[i].innerHTML,
+        value: contactsValueInput[i].value,
+      });
+    }
 
     clientObj.name = modalForm.inputName.value;
     clientObj.surname = modalForm.inputSurname.value;
@@ -38,6 +49,8 @@ export const createModalWindow = () => {
     modalForm.inputLastName.value = '';
 
     modal.remove();
+
+    console.log(clientObj);
   });
 
   return modal;

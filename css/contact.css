@@ -32,10 +32,33 @@
 }
 
 .contact__name {
+  padding-left: 15px;
+  position: relative;
   height: 37px;
   width: 123px;
   border: 1px #C8C5D1 solid;
   background-color: #E7E5EB;
+  font-weight: 600;
+  text-align: left;
+}
+
+.contact__name::before {
+  position: absolute;
+  content: '';
+  right: 5px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url(../img/arrow_back_ios.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  top: 10px;
+  transition: transform 0.3s;
+}
+
+.contact__name.active::before {
+  transform: rotate(-180deg);
 }
 
 .contact__input {

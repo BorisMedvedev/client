@@ -39,15 +39,32 @@ export const createFormContactItem = () => {
   contactBtnDel.addEventListener('click', (e) => {
     e.preventDefault();
     contact.remove();
+    document.querySelector('.add-contact').classList.add('active');
   });
 
   contactName.addEventListener('click', (e) => {
     e.preventDefault();
     contactList.classList.toggle('active');
+    contactName.classList.toggle('active');
   });
   contactType.addEventListener('mouseleave', () => {
     contactList.classList.remove('active');
+    contactName.classList.remove('active');
   });
+
+  const setType = (type) => {
+    type.addEventListener('click', () => {
+      contactName.textContent = type.textContent;
+      contactList.classList.remove('active');
+      contactName.classList.remove('active');
+    });
+  };
+
+  const typeArr = [contactEmail, contactVk, contactOther, contactPhone];
+
+  for (const iterator of typeArr) {
+    setType(iterator);
+  }
 
   return {
     contact,

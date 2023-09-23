@@ -41,6 +41,27 @@ export const createModalForm = (title) => {
   plusDef.classList.add('plus-span', 'plus-span--active');
   plusHov.classList.add('plus-span');
 
+  inputName.addEventListener('input', () => {
+    if (inputName.value !== '') {
+      labelName.style.display = 'none';
+    } else if (inputName.value === '') {
+      labelName.style.display = 'block';
+    }
+  });
+  inputSurname.addEventListener('input', () => {
+    if (inputSurname.value !== '') {
+      labelSurName.style.display = 'none';
+    } else if (inputSurname.value === '') {
+      labelSurName.style.display = 'block';
+    }
+  });
+  inputLastName.addEventListener('input', () => {
+    if (inputLastName.value !== '') {
+      labelLastName.style.display = 'none';
+    } else if (inputLastName.value === '') {
+      labelLastName.style.display = 'block';
+    }
+  });
 
   inputName.type = 'text';
   inputSurname.type = 'text';
